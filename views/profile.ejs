@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <title>Travel</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+    <div class="page-header text-center">
+        <h1>Welcome to Mexico  <%= user.local.email %> </h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    
+    <div class="well ">
+        <h3><span class="fa fa-user"></span> Local</h3>
+        <div class="profile">
+            <img src="img/default.jpg" alt="Old profile picture">
+
+          </div>
+       <button class="update-profile-btn">
+  <i class="fa fa-camera"></i> Change Profile Picture
+</button>
+<button class="delete-profile-pic-btn"><i class="fa fa-trash"></i> Delete Profile Picture</button>
+<div class="bio">
+    <h2></h2>
+    <p></p>
+    <p></p>
+    <button class="bio-button">Write a Bio</button>
+  </div>
+        <% if (user.local.email) { %>
+            <p>
+                <strong>id</strong>: <%= user._id %><br>
+                <strong>email</strong>: <%= user.local.email %><br>
+                <strong>password</strong>: <%= user.local.password %>
+            </p>
+           
+            <a href="/unlink/local" class="btn btn-default">Unlink</a>
+        <% } else { %>
+            <a href="/connect/local" class="btn btn-default">Connect Local</a>
+        <% } %>
+        
+  
+</div>
+<div>
+ <h2> Convert dollars to pesos</h2>
+  <label for="dollars">Enter dollars:</label>
+    <input type="number" id="dollars" name="dollars">
+    <button onclick="convert()">Convert</button>
+    <p id="result"></p>
+
+
+		
+		<h2> Translate </h2>
+		<p> Use this translator English to Spanish</p>
+		
+      <textarea id="word" type="text" name="" placeholder="English to Spanish "value=""></textarea>
+        
+		<button id="translate" type="button" name="button">Translate</button>
+		
+
+		
+		
+			
+		
+			
+	
+		
+       
+        <h2 id="esp"></h2>
+        
+	</div>
+		
+		
+	
+
+		
+
+<script src="main.js"></script>
+
+</body>
+</html>
